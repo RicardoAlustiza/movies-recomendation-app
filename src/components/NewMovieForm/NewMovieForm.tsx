@@ -87,7 +87,7 @@ export const NewMovieForm = ({currentMovies, setCurrentMovies}: NewMovieFormProp
 
         <div className='row'>
           <div className="form-group">
-            <label htmlFor="movie-url">Movie URL <i>(Optional)</i></label>
+            <label htmlFor="movie-url">Movie Cover URL <sup>(Optional)</sup></label>
             <input type="url" id="movie-url" name="movie-url"/>          
           </div>
           <div className="form-group">
@@ -119,7 +119,7 @@ export const NewMovieForm = ({currentMovies, setCurrentMovies}: NewMovieFormProp
             { errors.rating && <span className='error-message'>{errors.rating}</span> }
           </div>
           <div className="form-group">
-            <label htmlFor="short-description">Short Description <i>(Optional)</i></label>
+            <label htmlFor="short-description">Short Description <sup>(Optional)</sup></label>
             <textarea id="short-description" name="short-description" rows={4}></textarea>
           </div>          
         </div>

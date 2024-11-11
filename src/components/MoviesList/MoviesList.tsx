@@ -34,31 +34,35 @@ export const MoviesList = ({currentMovies}: MoviesListProps) => {
   }, [filterMovies, currentMovies])
 
   return (
-    <div className='movie-list__component'>
-      <div className='movies__list'>
-        {
-          currentMovies.length === 0
-          ? 
-          <>
-            <h3 className='list__title'>No recomendations available</h3>
-            <span className='list__subtitle'>Insert a new movie recomendation...</span>
-          </>
-          :
-          <>
-            <h3 className='list__title'>Recomendations</h3>
-            <div className='list__cards'>
-              {filteredMovies.map(movie => (
-                <MovieCard key={movie.id} movie={movie} />
-              ))}
-            </div>       
-          </>
-        }
-      </div>
+    <>
       <div className="filter-list-container">
-        <span className="filtered-list-lenght">{filteredMovies.length}</span>
+        <span>You can filter using title, year, gender or rating:</span>
+        <span className="filtered-list-lenght">{filteredMovies.length} Results</span>
         <input type="text" placeholder="Search movie..." onChange={(e) => setFilterMovies(e.target.value)}/>
       </div>
-    </div>
+      <div className='movie-list__component'>
+        <div className='movies__list'>
+          {
+            currentMovies.length === 0
+            ? 
+            <>
+              <h3 className='list__title'>No recomendations available</h3>
+              <span className='list__subtitle'>Insert a new movie recomendation...</span>
+            </>
+            :
+            <>
+              <h3 className='list__title'>Recomendations</h3>
+              <div className='list__cards'>
+                {filteredMovies.map(movie => (
+                  <MovieCard key={movie.id} movie={movie} />
+                ))}
+              </div>       
+            </>
+          }
+        </div>
+      </div>      
+    </>
+
 
   )
 }
