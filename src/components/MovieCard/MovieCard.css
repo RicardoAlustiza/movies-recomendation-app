@@ -1,0 +1,66 @@
+.card {
+  border: 1px solid #636363;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  height: 300px;
+  margin: .19rem;
+  min-width: 200px;
+  overflow: hidden;
+  position: relative;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+  z-index: 0;
+}
+
+.card:hover {
+  box-shadow: 0 54px 55px rgba(0, 0, 0, .25), 0 -12px 30px rgba(0, 0, 0, .12), 0 4px 6px rgba(0, 0, 0, .12), 0 12px 13px rgba(0, 0, 0, .17), 0 -3px 5px rgba(0, 0, 0, .09);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  z-index: 1000;
+}
+
+.card__img {
+  border-radius: 10px 0 0 10px;
+  height: 300px;
+}
+
+.card__overlay {
+  background-image: linear-gradient(transparent, #000);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  height: 290px;
+  justify-content: flex-end;
+  opacity: 0;
+  padding: 0 1rem 1rem;
+  position: absolute;
+  transition: opacity .2s;
+  width: 85%;
+}
+
+.card__overlay:hover {
+  opacity: 1;
+}
+
+.card__title {
+  font-size: 1rem;
+  font-weight: 900;
+  margin-bottom: .4rem;
+}
+
+.card__runtime {
+  font-size: .75rem;
+  margin-bottom: .25rem;
+}
+
+.card__rating {
+  float: right;
+}
+
+.card__description {
+  font-size: .75rem;
+  font-style: italic;
+  margin-bottom: .25rem;
+}

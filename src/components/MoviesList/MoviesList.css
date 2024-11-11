@@ -1,0 +1,44 @@
+.movie-list__component {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .list__title {
+    font-size: 1.75rem;
+  }
+  
+  .list__subtitle {
+    font-size: 1rem;
+  }
+  
+  .list__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .filter-list-container {
+    margin-top: min(2rem, 5%);
+  
+    & .filtered-list-lenght {
+      font-size: 1rem;
+      margin: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    align-items: center;
+    flex-direction: column-reverse;
+
+    .list__title {
+      margin: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .list__subtitle {
+      margin: 1rem;
+    }
+  }
+}
