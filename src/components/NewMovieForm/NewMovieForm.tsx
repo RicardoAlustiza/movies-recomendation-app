@@ -12,13 +12,17 @@ interface NewMovieFormProps {
 type FormData = {
   title: string;
   releaseDate: string;
+  movieCoverURL: string;
   rating: string;
+  shortDescription: string;
 }
 
 const formConfig = {
   title: { required: true, pattern: /^[a-zA-Z0-9 ]+$/ },
   releaseDate: { required: true, pattern: /^\d{4}-\d{2}-\d{2}$/ },
+  movieCoverURL: { required: false },
   rating: { required: true, pattern: /^(10|[1-9])$/ },
+  shortDescription: { required: false },
 }
 
 export const NewMovieForm = ({currentMovies, setCurrentMovies}: NewMovieFormProps) => {
@@ -88,7 +92,13 @@ export const NewMovieForm = ({currentMovies, setCurrentMovies}: NewMovieFormProp
         <div className='row'>
           <div className="form-group">
             <label htmlFor="movie-url">Movie Cover URL <sup>(Optional)</sup></label>
-            <input type="url" id="movie-url" name="movie-url"/>          
+            <input 
+              type="url"
+              id="movie-url"
+              name="movie-url"
+              value={values.movieCoverURL || ''}
+              onChange={(e) => handleChange('movieCoverURL', e.target.value)}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="genres">Genres <sup>*</sup></label>
@@ -120,7 +130,13 @@ export const NewMovieForm = ({currentMovies, setCurrentMovies}: NewMovieFormProp
           </div>
           <div className="form-group">
             <label htmlFor="short-description">Short Description <sup>(Optional)</sup></label>
-            <textarea id="short-description" name="short-description" rows={4}></textarea>
+            <textarea 
+              id="short-description"
+              name="short-description"
+              rows={1}
+              value={values.shortDescription || ''}
+              onChange={(e) => handleChange('shortDescription', e.target.value)}
+            ></textarea>
           </div>          
         </div>
 
