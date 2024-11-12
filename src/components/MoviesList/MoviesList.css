@@ -41,8 +41,15 @@
   font-size: large;
 
   & .filtered-list-lenght {
-    font-size: 1rem;
+    font-size: large;
     margin: 1rem;
+  }
+
+  & input {
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
   }
 
   @media (max-width: 768px) {

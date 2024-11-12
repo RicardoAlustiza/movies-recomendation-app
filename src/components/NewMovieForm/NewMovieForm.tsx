@@ -105,7 +105,7 @@ export const NewMovieForm = ({currentMovies, setCurrentMovies}: NewMovieFormProp
 
         <div className="row">
           <div className="form-group">
-            <label htmlFor="rating">Rating <sup>*</sup></label>
+            <label htmlFor="rating">Rating (1-10) <sup>*</sup></label>
             <input 
               type="number"
               id="rating"
